@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Book Details</h2>
+  
+    <table class="table table-dark">
+      <thead>
+        <tr>
+           <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col">SKU</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Price</th>
+      <th scope="col">Available</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+      <td><img src="{{ book.image }}" alt=""></td>
+      <td>{{ book.name }}</td>
+      <td>{{ book.category }}</td>
+      <td>{{ book.description }}</td>
+      <td>{{ book.sku }}</td>
+      <td>{{ book.stock }}</td>
+      <td>${{ book.price }}</td>
+      <td>{{ book.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button routerLink="/book-list">Back</button>
+  </div>

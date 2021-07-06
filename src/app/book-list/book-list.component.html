@@ -1,0 +1,40 @@
+<h1>Book Store</h1>
+
+
+<div class="form-group" id="searchcomponent">
+  <select [(ngModel)]="searchValue" id="search" name="searchCategory" class="select" required>
+    <option value="undefined" selected disabled class="option">Filter by Category</option>
+    <option value="Fiction">Fiction</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Horror">Horror</option>
+    <option value="Show All">Show All</option>
+  </select>
+</div>
+<div class="form-group">
+<input type="text" [(ngModel)]="searchValue" class="form-control" id="search" placeholder="Search by Name">
+</div>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of books | searchfilter:searchValue">
+      <td>
+          <a (click)="viewBook(book.id)"><img src="{{ book.image }}" alt="">
+          </a></td>
+      <td>{{ book.name }}</td>
+      <td>${{ book.price }}</td>
+      <td>{{ book.status }}</td>
+      <td>
+        <button (click)="viewBook(book.id)" class="view">
+          View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

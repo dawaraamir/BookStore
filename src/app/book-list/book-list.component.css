@@ -1,0 +1,11 @@
+h1{text-align: center;}
+img{ 
+    float: left;
+    width:  100px;
+    height: 150px;
+    background-size: cover;
+}
+a:hover{
+    cursor: pointer;
+}
+    
